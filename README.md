@@ -30,9 +30,9 @@ Add extra methods to do each of the following menu options. The user should be a
 to choose from the menu what the program does, until they enter ‘Q’ which should quit the
 program.
 
- E: Display Empty seats
- D: Delete customer from seat
- F: Find the seat for a given customers name
- S: Store program data in to file
- L: Load program data from file
- O: View seats Ordered alphabetically by name. (Using the bubble sort algorithm in the notes)
+ - E: Display Empty seats
+ - D: Delete customer from seat
+ - F: Find the seat for a given customers name
+ - S: Store program data in to file
+ - L: Load program data from file
+ - O: View seats Ordered alphabetically by name. (Using the bubble sort algorithm in the notes)
