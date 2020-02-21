@@ -130,6 +130,24 @@ public class TrainBooking {
         return false;
     }
     
+    private static boolean deleteValidationFailed(String seatNo, String[] trainSeats) {
+        int seatNoAsInt;
+        if (!isInteger(seatNo)) {
+            System.out.print("You have to enter a number!\nChoose seat again: ");
+            return true;
+        }
+        seatNoAsInt = Integer.parseInt(seatNo);
+        if (seatNoAsInt<1 || seatNoAsInt>8) {
+            System.out.println("Seat numbers are from 1 to 8!\nChoose seat again: ");
+            return true;
+        }
+        if (trainSeats[seatNoAsInt-1].equals("e")) {
+            System.out.println("Seat number " + seatNoAsInt + " is already empty!\nChoose seat again: ");
+            return true;
+        }
+        return false;
+    }
+    
     private static String menuList() {
         System.out.println(
                   "\nTo continue, choose from the list of menu options:\n"
@@ -196,17 +214,22 @@ public class TrainBooking {
     }
     
     private static void deleteCustomer(String[] trainSeats) {
+        String seatNo;
+        int seatNoAsInt;
         for (int i=0; i<trainSeats.length; i++) {
             if (!trainSeats[i].equals("e")) {
                 System.out.println("No. " + (i+1) + ": " + trainSeats[i]);
             }
         }
         System.out.print("\nChoose seat number to clear it: ");
-        int seatNo;
         Scanner in = new Scanner(System.in);
-        seatNo = in.nextInt();
-        trainSeats[seatNo-1] = "e";
-        System.out.println("...\nSeat number " + seatNo + " is now empty.");
+        seatNo = in.nextLine();
+        while (deleteValidationFailed(seatNo, trainSeats)) {
+                seatNo = in.nextLine();
+            }
+        seatNoAsInt = Integer.parseInt(seatNo);
+        trainSeats[seatNoAsInt-1] = "e";
+        System.out.println("...\nSeat number " + seatNoAsInt + " is now empty.");
     }
     
     private static void findCustomer(String[] trainSeats) {
