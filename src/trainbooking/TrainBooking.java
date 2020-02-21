@@ -237,9 +237,12 @@ public class TrainBooking {
         Scanner in = new Scanner(System.in);
         System.out.print("Enter customer's name: ");
         name = in.nextLine();
+        while (nameValidationFailed(name)) {
+            name = in.nextLine();
+        }
         System.out.println("\nCustomers matching request: ");
         for (int i=0; i<trainSeats.length; i++) {
-            if (trainSeats[i].contains(name)) {
+            if ((trainSeats[i].toLowerCase()).contains(name.toLowerCase())) {
                 System.out.println("- " + trainSeats[i] + " - seat number " + (i+1));
             }
         }
