@@ -166,6 +166,7 @@ public class TrainBooking {
         // Checking if empty seats available
         if (Arrays.asList(trainSeats).contains("e")) {
             Scanner in = new Scanner(System.in);
+            
             // Processing name input:
             System.out.print("Enter customer's name: ");
             name = in.nextLine();
