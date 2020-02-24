@@ -154,8 +154,8 @@ public class TrainBooking {
                 + "---------------------------\n"
                 + "Q:\t Quit program\n"
                 + "V:\t View all bookings\n"
-                + "A:\t Add customer to seat\n"
                 + "E:\t Display empty seats\n"
+                + "A:\t Add customer to seat\n"
                 + "D:\t Delete customer from seat\n"
                 + "F:\t Find a customer\n"
                 + "S:\t Store program data in to file\n"
@@ -281,7 +281,7 @@ public class TrainBooking {
             System.out.println("...\nData has been loaded!\nChoose 'V' to see bookings.");
         }
         catch (FileNotFoundException error) {
-            System.out.println("Exception error:\nNo data to load!\nAdd and store data in to file to load it later.");
+            System.out.println("Exception error:\nNo data to load!\nAdd and store data in to file first to load it later.");
         }
     }
     
