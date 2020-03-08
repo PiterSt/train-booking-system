@@ -83,7 +83,7 @@ public class TrainBooking {
         System.out.println("\nYour session has ended. Goodbye!");
     }
     
-    // Basic Methods:
+    // Internal Methods:
     
     private static void initialise(String[] trainSeats) {
         for (int i=0; i< trainSeats.length; i++) trainSeats[i]= "e";
@@ -148,6 +148,8 @@ public class TrainBooking {
         return false;
     }
     
+    // Menu Options Methods:
+    
     private static String menuList() {
         System.out.println(
                   "\nTo continue, choose from the list of menu options:\n"
@@ -165,8 +167,6 @@ public class TrainBooking {
         String menuChoice = in.nextLine().toLowerCase();
         return menuChoice;
     }
-    
-    // Menu Options Methods:
     
     private static void viewBookings(String[] trainSeats) {
         for (int i=0; i < trainSeats.length; i++) {
